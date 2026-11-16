@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gizlilik Politikası — İngilizce 3000 Kelime</title>
+<style>
+  :root{--brand:#4f46e5;--ink:#1f2233;--muted:#6b7080;--line:#e6e8f2}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);line-height:1.75;background:#fbfbfe}
+  header{background:linear-gradient(135deg,#5b52ea,#7c5cf0);color:#fff;padding:38px 20px}
+  .wrap{max-width:760px;margin:0 auto}
+  header h1{margin:0;font-size:23px;letter-spacing:-.3px}
+  header p{margin:6px 0 0;opacity:.9;font-size:14px}
+  main{padding:32px 20px 60px}
+  h2{font-size:18px;margin:30px 0 8px}
+  h2:first-child{margin-top:0}
+  p,li{font-size:15px;color:#3a3f52}
+  ul{padding-left:22px;margin:8px 0}
+  .box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:16px 0}
+  a{color:var(--brand)}
+  code{background:#f1f2f8;padding:1px 6px;border-radius:6px;font-size:13px}
+  footer{border-top:1px solid var(--line);padding:20px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Gizlilik Politikası</h1>
+    <p>İngilizce 3000 Kelime · Son güncelleme: 16 Kasım 2026</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="box">
+    <p style="margin:0">
+      Bu politika, <strong>İngilizce 3000 Kelime</strong> Android uygulamasının (bundan sonra “Uygulama”)
+      Google kullanıcı verilerini nasıl işlediğini açıklar. Uygulama, Google API Hizmetleri Kullanıcı Verileri
+      Politikası da dahil olmak üzere geçerli Google politikalarına uygun davranır.
+    </p>
+  </div>
+
+  <h2>1. Uygulamanın çalışması için gereken veriler</h2>
+  <p>
+    Uygulamanın temel özellikleri (kelime listesi, kartlar, test, sesli telaffuz) <strong>tamamen çevrimdışı</strong>
+    çalışır. Bu özellikler için hiçbir kişisel veri toplanmaz, hiçbir sunucuya gönderilmez ve internet bağlantısı
+    gerekmez. Öğrenme ilerlemesi ve favoriler yalnızca cihazın kendi yerel deposunda tutulur.
+  </p>
+
+  <h2>2. Google hesabıyla giriş (isteğe bağlı)</h2>
+  <p>Kullanıcı bulut eşitlemeyi etkinleştirmeyi seçerse, Google OAuth 2.0 ile giriş yapılır ve şu veriler işlenir:</p>
+  <ul>
+    <li><strong>E-posta adresi</strong> (<code>openid</code>, <code>email</code>): yalnızca hangi hesabın bağlı olduğunu
+      uygulama içinde göstermek için kullanılır. Hiçbir yere gönderilmez.</li>
+    <li><strong>Uygulama verisi</strong> (<code>https://www.googleapis.com/auth/drive.file</code>): öğrenilen
+      kelimeler, favoriler ve uygulama ayarlarını içeren tek bir eşitleme dosyası
+      (<code>ingilizce3000-sync.json</code>), kullanıcının kendi Google Drive hesabında saklanır.</li>
+  </ul>
+
+  <h2>3. Verilerin saklandığı yer ve erişim sınırı</h2>
+  <ul>
+    <li>Eşitleme dosyası <strong>kullanıcının kendi Google Drive alanında</strong> durur; uygulamanın sahibine
+      ait bir sunucuya kopyalanmaz. Dosya yalnızca öğrenme verilerini içerir (kelime numaraları ve ayarlar),
+      kişisel bilgi içermez.</li>
+    <li>Uygulama <strong>yalnızca kendi oluşturduğu</strong> dosyaya erişebilir. Kullanıcının diğer Drive
+      dosyaları, fotoğrafları veya belgeleri okunamaz, değiştirilemez ve listelenemez.</li>
+    <li>Dosya Drive'da <code>ingilizce3000-sync.json</code> adıyla görünür ve kullanıcı tarafından
+      silinebilir; silinmesi veri kaybına yol açmaz, uygulama bir sonraki eşitlemede yeniden oluşturur.</li>
+  </ul>
+
+  <h2>4. Üçüncü taraflarla paylaşım</h2>
+  <p>
+    Veriler <strong>hiçbir üçüncü tarafa satılmaz, kiralanmaz veya aktarılmaz</strong>. Reklam ve analiz
+    yazılımı (SDK) kullanılmaz. Google dışında hiçbir hizmete veri gönderilmez.
+  </p>
+
+  <h2>5. Verilerin silinmesi</h2>
+  <ul>
+    <li>Uygulama içinden <strong>Ayarlar → Google hesabı ve eşitleme → Çıkış yap</strong> ile oturum kapatılabilir.</li>
+    <li>Eşitleme dosyası, uygulamanın bağlı olduğu hesapla
+      <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Hesap izinleri</a>
+      sayfasından uygulamanın erişimi kaldırılarak silinebilir.</li>
+    <li>Uygulama kaldırıldığında cihazdaki yerel veriler de silinir.</li>
+  </ul>
+
+  <h2>6. Çocukların gizliliği</h2>
+  <p>Uygulama 13 yaş altı çocuklardan bilerek kişisel veri toplamaz; herhangi bir yaş grubuna yönelik reklam
+    veya izleme içermez.</p>
+
+  <h2>7. Değişiklikler</h2>
+  <p>Bu politika güncellenirse, bu sayfadaki “Son güncelleme” tarihi değiştirilir.</p>
+
+  <h2>8. İletişim</h2>
+  <p>Sorularınız için: <a href="/cdn-cgi/l/email-protection#7f0c1e0d160c1e130b16144a4a3f18121e1613511c1012"><span class="__cf_email__" data-cfemail="e89b899a819b89849c8183dddda88f85898184c68b8785">[email&#160;protected]</span></a></p>
+  <p style="color:var(--muted);font-size:14px">
+    Not: Bu sayfadaki e-posta adresini kendi adresinizle değiştirebilirsiniz.
+  </p>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 İngilizce 3000 Kelime · <a href="index.html">Ana sayfa</a></div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5b846ff4ead1c9a',t:'MTc5NDg1MDc5MA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5b846ff4ead1c9a',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>İngilizce 3000 Kelime — Bulut Eşitleme</title>
+<style>
+  :root{--brand:#4f46e5;--ink:#1f2233;--muted:#6b7080;--line:#e6e8f2}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);line-height:1.7;background:#fbfbfe}
+  header{background:linear-gradient(135deg,#5b52ea,#7c5cf0);color:#fff;padding:44px 20px}
+  .wrap{max-width:760px;margin:0 auto}
+  header h1{margin:0 0 8px;font-size:26px;letter-spacing:-.4px}
+  header p{margin:0;opacity:.92;font-size:15px}
+  main{padding:34px 20px 60px}
+  h2{font-size:19px;margin:34px 0 10px}
+  h2:first-child{margin-top:0}
+  p,li{font-size:15px;color:#3a3f52}
+  ul{padding-left:22px;margin:8px 0}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:18px 0;
+        box-shadow:0 1px 3px rgba(20,25,60,.04)}
+  .tag{display:inline-block;background:#eef0ff;color:var(--brand);font-weight:700;font-size:12px;
+       padding:4px 10px;border-radius:999px;margin-bottom:10px;letter-spacing:.2px}
+  a{color:var(--brand)}
+  footer{border-top:1px solid var(--line);padding:22px 20px;color:var(--muted);font-size:13px}
+  code{background:#f1f2f8;padding:1px 6px;border-radius:6px;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>İngilizce 3000 Kelime</h1>
+    <p>The Oxford 3000 — 3000 kelime, sesli telaffuz, örnek cümleler · Android uygulaması</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="card">
+    <span class="tag">Uygulama hakkında</span>
+    <h2 style="margin-top:0">İngilizce 3000 Kelime nedir?</h2>
+    <p>
+      <strong>İngilizce 3000 Kelime</strong>, Oxford 3000 listesindeki 3000 öğeyi (2979 kelime + 21 ikinci anlam)
+      Türkçe anlamları, okunuşları, örnek cümleleri ve <strong>erkek sesli telaffuzlarıyla</strong> öğreten
+      çevrimdışı bir Android uygulamasıdır.
+    </p>
+    <ul>
+      <li>Kelime listesi, A1–B2 seviye filtreleri ve arama</li>
+      <li>Kelime kartları, test modu, öğrenilen/favori takibi</li>
+      <li>Tüm sesler uygulamanın içindedir — <strong>internet gerektirmez</strong></li>
+      <li>İsteğe bağlı: Google hesabıyla <strong>bulut eşitleme</strong></li>
+    </ul>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:0">
+      Uygulama Google Play dışında (APK olarak) dağıtılmaktadır.
+    </p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Bulut eşitleme</span>
+    <h2 style="margin-top:0">Google hesabı neden kullanılıyor?</h2>
+    <p>
+      Eşitleme özelliği <strong>isteğe bağlıdır</strong>. Kullanıcı etkinleştirirse:
+    </p>
+    <ul>
+      <li>Öğrenilen kelimeler, favoriler ve uygulama ayarları kullanıcının <strong>kendi Google Drive'ında</strong> saklanır.</li>
+      <li>Veriler tek bir dosyada (<code>ingilizce3000-sync.json</code>) kullanıcının kendi Drive'ında tutulur; uygulama yalnızca <strong>kendi oluşturduğu bu dosyaya</strong> erişebilir.</li>
+      <li>Başka bir cihazda aynı hesapla giriş yapıldığında veriler birleştirilir; hiçbir veri kaybolmaz.</li>
+      <li>Uygulamanın kendine ait bir sunucusu yoktur; veriler Google dışında üçüncü bir tarafa gönderilmez.</li>
+    </ul>
+    <p><a href="gizlilik.html">Gizlilik Politikası →</a></p>
+  </div>
+
+  <div class="card">
+    <span class="tag">Teknik</span>
+    <h2 style="margin-top:0">Kullanılan Google izinleri</h2>
+    <ul>
+      <li><code>openid</code>, <code>email</code> — giriş yapılan hesabın e-posta adresini göstermek için</li>
+      <li><code>https://www.googleapis.com/auth/drive.file</code> — yalnızca bu uygulamanın oluşturduğu
+        eşitleme dosyasına erişim (diğer dosyalarınız okunamaz, listelenemez)</li>
+    </ul>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:0">
+      Kullanılan izinler Google tarafından <strong>hassas olmayan (non-sensitive)</strong> kapsam olarak
+      sınıflandırılmıştır.
+    </p>
+  </div>
+
+  <h2>İletişim</h2>
+  <p>Destek ve sorular için: <a href="/cdn-cgi/l/email-protection#265547544f55474a524f4d131366414b474f4a0845494b"><span class="__cf_email__" data-cfemail="582b392a312b39342c31336d6d183f35393134763b3735">[email&#160;protected]</span></a></p>
+  <p style="color:var(--muted);font-size:14px">
+    Not: Bu sayfadaki e-posta adresini kendi adresinizle değiştirebilirsiniz.
+  </p>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 İngilizce 3000 Kelime · <a href="gizlilik.html">Gizlilik Politikası</a>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5b8472a3c0d1c9a',t:'MTc5NDg1MDc5Nw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5b8472a3c0d1c9a',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
