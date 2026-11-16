@@ -3,96 +3,223 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>İngilizce 3000 Kelime — Bulut Eşitleme</title>
+<title>İngilizce 3000 Kelime — Oxford 3000 · Android</title>
+<meta name="description" content="Oxford 3000 listesindeki 3000 kelimeyi Türkçe anlamları, okunuşları, örnek cümleleri ve erkek sesli telaffuzlarıyla öğreten ücretsiz Android uygulaması.">
 <style>
-  :root{--brand:#4f46e5;--ink:#1f2233;--muted:#6b7080;--line:#e6e8f2}
+  :root{--brand:#4f46e5;--brand2:#7c5cf0;--ink:#1a1d2e;--muted:#666c80;--line:#e7e9f3;--bg:#fbfbfe}
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       color:var(--ink);line-height:1.7;background:#fbfbfe}
-  header{background:linear-gradient(135deg,#5b52ea,#7c5cf0);color:#fff;padding:44px 20px}
-  .wrap{max-width:760px;margin:0 auto}
-  header h1{margin:0 0 8px;font-size:26px;letter-spacing:-.4px}
-  header p{margin:0;opacity:.92;font-size:15px}
-  main{padding:34px 20px 60px}
-  h2{font-size:19px;margin:34px 0 10px}
-  h2:first-child{margin-top:0}
-  p,li{font-size:15px;color:#3a3f52}
-  ul{padding-left:22px;margin:8px 0}
-  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:18px 0;
+       color:var(--ink);line-height:1.7;background:var(--bg);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+
+  /* ---------- hero ---------- */
+  header{background:linear-gradient(135deg,#5b52ea 0%,#7c5cf0 55%,#9b6bf5 100%);color:#fff;
+         padding:56px 0 64px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-260px;
+                background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%)}
+  .hero{display:flex;gap:38px;align-items:center;justify-content:space-between;position:relative;z-index:1}
+  .hero-txt{flex:1;min-width:0}
+  .hero h1{margin:0 0 10px;font-size:34px;line-height:1.2;letter-spacing:-.8px}
+  .hero .sub{font-size:16px;opacity:.94;margin:0 0 22px;max-width:430px}
+  .pill{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+        color:#fff;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px;margin-bottom:16px;letter-spacing:.3px}
+  .btn-dl{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#4f46e5;
+          font-weight:800;font-size:17px;padding:15px 28px;border-radius:14px;text-decoration:none;
+          box-shadow:0 10px 26px rgba(20,20,60,.25);transition:transform .16s,box-shadow .16s}
+  .btn-dl:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(20,20,60,.32)}
+  .btn-dl svg{flex:0 0 auto}
+  .meta{margin:14px 0 0;font-size:13px;opacity:.85}
+  .hero-shot{flex:0 0 auto;width:236px;border-radius:22px;overflow:hidden;
+             box-shadow:0 24px 50px rgba(15,15,50,.38);border:5px solid rgba(255,255,255,.18);
+             transform:rotate(-2.2deg)}
+  .hero-shot img{display:block;width:100%;height:auto}
+
+  /* ---------- içerik ---------- */
+  main{padding:52px 0 20px}
+  h2{font-size:22px;margin:0 0 6px;letter-spacing:-.4px}
+  .lead{color:var(--muted);margin:0 0 26px;font-size:15px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:0 0 20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;
         box-shadow:0 1px 3px rgba(20,25,60,.04)}
-  .tag{display:inline-block;background:#eef0ff;color:var(--brand);font-weight:700;font-size:12px;
-       padding:4px 10px;border-radius:999px;margin-bottom:10px;letter-spacing:.2px}
+  .card h3{margin:0 0 6px;font-size:15.5px;display:flex;align-items:center;gap:9px}
+  .card p{margin:0;font-size:14px;color:var(--muted)}
+  .ico{width:26px;height:26px;border-radius:8px;background:#eef0ff;display:inline-flex;
+       align-items:center;justify-content:center;flex:0 0 auto;font-size:14px}
+
+  /* ---------- galeri ---------- */
+  .shots{display:flex;gap:16px;overflow-x:auto;padding:6px 0 18px;scroll-snap-type:x mandatory;
+         -webkit-overflow-scrolling:touch}
+  .shots figure{flex:0 0 auto;margin:0;scroll-snap-align:center}
+  .shots img{display:block;width:212px;border-radius:16px;border:1px solid var(--line);
+             box-shadow:0 8px 22px rgba(20,25,60,.10)}
+  .shots figcaption{font-size:12.5px;color:var(--muted);text-align:center;margin-top:9px;font-weight:600}
+  .hint{font-size:12.5px;color:var(--muted);margin:-6px 0 0}
+
+  /* ---------- kurulum ---------- */
+  ol.steps{padding-left:0;margin:0;counter-reset:s;list-style:none}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 44px;font-size:14.5px;color:#3a3f52}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;
+         background:var(--brand);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .note{background:#fff8e6;border:1px solid #f5e0a8;border-radius:12px;padding:14px 18px;font-size:13.5px;
+        color:#6b5300;margin:16px 0 0}
+
+  /* ---------- sss ---------- */
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:0 0 10px}
+  details summary{cursor:pointer;font-weight:700;font-size:14.5px}
+  details p{margin:10px 0 0;font-size:14px;color:var(--muted)}
+
+  /* ---------- alt ---------- */
+  .cta{background:linear-gradient(135deg,#5b52ea,#7c5cf0);border-radius:20px;color:#fff;
+       padding:34px 26px;text-align:center;margin:44px 0 0}
+  .cta h2{color:#fff;margin:0 0 8px}
+  .cta p{margin:0 0 20px;opacity:.9;font-size:14.5px}
+  footer{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 40px;font-size:13px;color:var(--muted)}
+  footer a{color:var(--brand)}
   a{color:var(--brand)}
-  footer{border-top:1px solid var(--line);padding:22px 20px;color:var(--muted);font-size:13px}
-  code{background:#f1f2f8;padding:1px 6px;border-radius:6px;font-size:13px}
+
+  @media(max-width:680px){
+    .hero{flex-direction:column-reverse;gap:26px;align-items:flex-start}
+    .hero h1{font-size:27px}
+    .hero-shot{width:190px;align-self:center;transform:rotate(-1.5deg)}
+    header{padding:38px 0 46px}
+    .btn-dl{font-size:16px;padding:14px 22px;width:100%;justify-content:center}
+  }
 </style>
 </head>
 <body>
+
 <header>
-  <div class="wrap">
-    <h1>İngilizce 3000 Kelime</h1>
-    <p>The Oxford 3000 — 3000 kelime, sesli telaffuz, örnek cümleler · Android uygulaması</p>
+  <div class="wrap hero">
+    <div class="hero-txt">
+      <span class="pill">The Oxford 3000 · Android</span>
+      <h1>İngilizce 3000 Kelime</h1>
+      <p class="sub">
+        Oxford 3000 listesinin tamamı: <strong>3000 kelime</strong>, Türkçe anlamlar, okunuşlar,
+        örnek cümleler ve <strong>erkek sesli telaffuz</strong>. Tamamen çevrimdışı çalışır.
+      </p>
+      <a class="btn-dl" href="https://github.com/SENTOR-X/ingilizce3000/releases/latest/download/Ingilizce3000-v2.11.1.apk">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+             stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+        APK indir
+      </a>
+      <p class="meta">Sürüm 2.11.1 · 64 MB · Android 5.0 ve üzeri · Ücretsiz</p>
+    </div>
+    <div class="hero-shot">
+      <img src="ekranlar/01-kelimeler.jpg" alt="İngilizce 3000 Kelime — kelime listesi ekranı">
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="card">
-    <span class="tag">Uygulama hakkında</span>
-    <h2 style="margin-top:0">İngilizce 3000 Kelime nedir?</h2>
-    <p>
-      <strong>İngilizce 3000 Kelime</strong>, Oxford 3000 listesindeki 3000 öğeyi (2979 kelime + 21 ikinci anlam)
-      Türkçe anlamları, okunuşları, örnek cümleleri ve <strong>erkek sesli telaffuzlarıyla</strong> öğreten
-      çevrimdışı bir Android uygulamasıdır.
-    </p>
-    <ul>
-      <li>Kelime listesi, A1–B2 seviye filtreleri ve arama</li>
-      <li>Kelime kartları, test modu, öğrenilen/favori takibi</li>
-      <li>Tüm sesler uygulamanın içindedir — <strong>internet gerektirmez</strong></li>
-      <li>İsteğe bağlı: Google hesabıyla <strong>bulut eşitleme</strong></li>
-    </ul>
-    <p style="color:var(--muted);font-size:14px;margin-bottom:0">
-      Uygulama Google Play dışında (APK olarak) dağıtılmaktadır.
-    </p>
+
+  <h2>Neler var?</h2>
+  <p class="lead">Tek uygulamada kelime öğrenmenin ihtiyaç duyduğunuz her adımı.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3><span class="ico">🔊</span> Her kelime sesli</h3>
+      <p>3000 kelimenin tamamı ve örnek cümleleri erkek sesiyle seslendirildi. Ses kayıtları uygulamanın içinde — internet gerekmez.</p>
+    </div>
+    <div class="card">
+      <h3><span class="ico">📚</span> Oxford 3000, tam liste</h3>
+      <p>Oxford Üniversitesi'nin en sık kullanılan İngilizce kelime listesi; 2979 kelime + 21 ikinci anlam = 3000 giriş.</p>
+    </div>
+    <div class="card">
+      <h3><span class="ico">🃏</span> Kartlar ve test</h3>
+      <p>Flashcard modunda kendinizi sınayın, test modunda duyduğunuz kelimenin anlamını seçin.</p>
+    </div>
+    <div class="card">
+      <h3><span class="ico">🎚️</span> A1–B2 filtreleri</h3>
+      <p>Seviyeye göre çalışın: A1 (905), A2 (801), B1 (695), B2 (599). Türkçe/İngilizce arama desteği.</p>
+    </div>
+    <div class="card">
+      <h3><span class="ico">⭐</span> Öğrenilen ve favoriler</h3>
+      <p>İlerlemeniz kaydedilir; favori kelimelerinizi ayrı listede toplayın.</p>
+    </div>
+    <div class="card">
+      <h3><span class="ico">☁️</span> Google ile eşitleme</h3>
+      <p>İsteğe bağlı. Tek düğmeyle giriş yapın; öğrendikleriniz kendi Google Drive'ınızda saklanır, başka cihazda kaldığınız yerden devam edersiniz.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <span class="tag">Bulut eşitleme</span>
-    <h2 style="margin-top:0">Google hesabı neden kullanılıyor?</h2>
-    <p>
-      Eşitleme özelliği <strong>isteğe bağlıdır</strong>. Kullanıcı etkinleştirirse:
-    </p>
-    <ul>
-      <li>Öğrenilen kelimeler, favoriler ve uygulama ayarları kullanıcının <strong>kendi Google Drive'ında</strong> saklanır.</li>
-      <li>Veriler tek bir dosyada (<code>ingilizce3000-sync.json</code>) kullanıcının kendi Drive'ında tutulur; uygulama yalnızca <strong>kendi oluşturduğu bu dosyaya</strong> erişebilir.</li>
-      <li>Başka bir cihazda aynı hesapla giriş yapıldığında veriler birleştirilir; hiçbir veri kaybolmaz.</li>
-      <li>Uygulamanın kendine ait bir sunucusu yoktur; veriler Google dışında üçüncü bir tarafa gönderilmez.</li>
-    </ul>
-    <p><a href="gizlilik.html">Gizlilik Politikası →</a></p>
+  <h2 style="margin-top:44px">Uygulamadan görüntüler</h2>
+  <p class="lead">Gerçek ekran görüntüleri — sürüm 2.11.1.</p>
+  <div class="shots">
+    <figure><img src="ekranlar/02-kelime-detayi.jpg" alt="Kelime detayı: anlam, okunuş, örnek cümle"><figcaption>Kelime detayı</figcaption></figure>
+    <figure><img src="ekranlar/03-kartlar.jpg" alt="Kelime kartları"><figcaption>Kartlar</figcaption></figure>
+    <figure><img src="ekranlar/04-test.jpg" alt="Test modu"><figcaption>Test</figcaption></figure>
+    <figure><img src="ekranlar/05-ayarlar.jpg" alt="Ayarlar: hız ve ses"><figcaption>Hız ve ses</figcaption></figure>
+    <figure><img src="ekranlar/06-google-hesabi.jpg" alt="Google hesabı ile eşitleme"><figcaption>Google eşitleme</figcaption></figure>
+  </div>
+  <p class="hint">← Yatay kaydırarak tümünü görebilirsiniz.</p>
+
+  <h2 style="margin-top:44px">Kurulum</h2>
+  <p class="lead">Uygulama Google Play dışında, APK dosyası olarak kurulur.</p>
+  <ol class="steps">
+    <li><strong>Yukarıdaki "APK indir" düğmesine basın.</strong> Dosya (64 MB) telefonunuza indirilir.</li>
+    <li><strong>Bildirimlerden veya İndirilenler klasöründen dosyaya dokunun.</strong></li>
+    <li><strong>"Bilinmeyen kaynaklara izin ver" uyarısı çıkarsa onaylayın.</strong> Bu, Play dışı uygulamalar için Android'in standart güvenlik adımıdır.</li>
+    <li><strong>Kur'a basın.</strong> Uygulama açılır ve hemen kullanılabilir.</li>
+  </ol>
+  <div class="note">
+    <strong>Not:</strong> Ses dosyaları uygulamanın içinde olduğu için ilk açılışta birkaç saniye hazırlık yapılır.
+    Uygulama bu hazırlık dışında tamamen çevrimdışı çalışır.
   </div>
 
-  <div class="card">
-    <span class="tag">Teknik</span>
-    <h2 style="margin-top:0">Kullanılan Google izinleri</h2>
-    <ul>
-      <li><code>openid</code>, <code>email</code> — giriş yapılan hesabın e-posta adresini göstermek için</li>
-      <li><code>https://www.googleapis.com/auth/drive.file</code> — yalnızca bu uygulamanın oluşturduğu
-        eşitleme dosyasına erişim (diğer dosyalarınız okunamaz, listelenemez)</li>
-    </ul>
-    <p style="color:var(--muted);font-size:14px;margin-bottom:0">
-      Kullanılan izinler Google tarafından <strong>hassas olmayan (non-sensitive)</strong> kapsam olarak
-      sınıflandırılmıştır.
-    </p>
-  </div>
+  <h2 style="margin-top:44px">Sık sorulanlar</h2>
+  <details>
+    <summary>Google hesabıyla giriş zorunlu mu?</summary>
+    <p>Hayır. Uygulamanın tüm özellikleri hesap olmadan çalışır. Google girişi yalnızca ilerlemenizi başka
+      bir cihazda da görmek isterseniz gerekir.</p>
+  </details>
+  <details>
+    <summary>Eşitleme hangi verileri saklıyor?</summary>
+    <p>Öğrendiğiniz kelimeler, favorileriniz ve uygulama ayarlarınız (konuşma hızı, otomatik çalma seçenekleri).
+      Veriler sizin kendi Google Drive'ınızda tek bir dosyada tutulur; uygulamanın sunucusu yoktur.</p>
+  </details>
+  <details>
+    <summary>İnternet gerekiyor mu?</summary>
+    <p>Hayır. Kelime listesi ve tüm ses kayıtları uygulamanın içindedir. İnternet yalnızca Google eşitlemeyi
+      kullanırsanız gerekir.</p>
+  </details>
+  <details>
+    <summary>Ücretli mi? Reklam var mı?</summary>
+    <p>Tamamen ücretsizdir. Reklam, abonelik veya uygulama içi satın alma yoktur. Hiçbir analiz/izleme yazılımı
+      kullanılmaz.</p>
+  </details>
+  <details>
+    <summary>Verilerimi nasıl silerim?</summary>
+    <p>Uygulamayı kaldırdığınızda cihazdaki veriler silinir. Buluttaki eşitleme dosyasını
+      <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Hesap izinleri</a>
+      sayfasından uygulamanın erişimini kaldırarak silebilirsiniz. Ayrıntılar:
+      <a href="gizlilik.html">Gizlilik Politikası</a>.</p>
+  </details>
 
-  <h2>İletişim</h2>
-  <p>Destek ve sorular için:</p>
-  <p style="font-size:17px;font-weight:700;margin:6px 0 0">sarisaltik55&#64;gmail.com</p>
+  <div class="cta">
+    <h2>Hemen indirin</h2>
+    <p>3000 kelime, sesli telaffuz, örnek cümleler — hepsi cebinizde, çevrimdışı.</p>
+    <a class="btn-dl" href="https://github.com/SENTOR-X/ingilizce3000/releases/latest/download/Ingilizce3000-v2.11.1.apk">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+           stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+      APK indir · 64 MB
+    </a>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    © 2026 İngilizce 3000 Kelime · <a href="gizlilik.html">Gizlilik Politikası</a>
+    <p style="margin:0 0 6px">
+      © 2026 İngilizce 3000 Kelime ·
+      <a href="gizlilik.html">Gizlilik Politikası</a> ·
+      <a href="https://github.com/SENTOR-X/ingilizce3000/releases">Sürümler</a>
+    </p>
+    <p style="margin:0">
+      Destek: <strong>sarisaltik55&#64;gmail.com</strong>
+    </p>
   </div>
 </footer>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5b86a985f84f85f',t:'MTc5NDg1MjI0OA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5b86a985f84f85f',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</body>
 </html>
