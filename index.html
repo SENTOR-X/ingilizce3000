@@ -30,10 +30,12 @@
   .btn-dl:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(20,20,60,.32)}
   .btn-dl svg{flex:0 0 auto}
   .meta{margin:14px 0 0;font-size:13px;opacity:.85}
-  .hero-shot{flex:0 0 auto;width:236px;border-radius:22px;overflow:hidden;
-             box-shadow:0 24px 50px rgba(15,15,50,.38);border:5px solid rgba(255,255,255,.18);
-             transform:rotate(-2.2deg)}
-  .hero-shot img{display:block;width:100%;height:auto}
+  .hero-shots{flex:0 0 auto;position:relative;width:352px;height:432px}
+  .phone{position:absolute;border-radius:20px;overflow:hidden;border:4px solid rgba(255,255,255,.22);
+         box-shadow:0 22px 46px rgba(12,12,45,.42);background:#fff}
+  .phone img{display:block;width:100%;height:auto}
+  .phone-front{width:196px;left:0;top:44px;transform:rotate(-3.6deg);z-index:2}
+  .phone-back{width:182px;right:0;top:0;transform:rotate(4.2deg);z-index:1;}
 
   /* ---------- içerik ---------- */
   main{padding:52px 0 20px}
@@ -47,6 +49,18 @@
   .card p{margin:0;font-size:14px;color:var(--muted)}
   .ico{width:26px;height:26px;border-radius:8px;background:#eef0ff;display:inline-flex;
        align-items:center;justify-content:center;flex:0 0 auto;font-size:14px}
+
+  /* ---------- seviye şeridi ---------- */
+  .levels{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 8px}
+  .lv{flex:1 1 150px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;
+      display:flex;align-items:center;gap:11px;box-shadow:0 1px 3px rgba(20,25,60,.04)}
+  .lv .dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+  .lv b{font-size:13.5px;display:block;line-height:1.35}
+  .lv span{font-size:12px;color:var(--muted)}
+  .lv.a1 .dot{background:#4f46e5} .lv.a1 b{color:#4f46e5}
+  .lv.a2 .dot{background:#0284c7} .lv.a2 b{color:#0284c7}
+  .lv.b1 .dot{background:#d97706} .lv.b1 b{color:#d97706}
+  .lv.b2 .dot{background:#dc2626} .lv.b2 b{color:#dc2626}
 
   /* ---------- galeri ---------- */
   .shots{display:flex;gap:16px;overflow-x:auto;padding:6px 0 18px;scroll-snap-type:x mandatory;
@@ -82,7 +96,9 @@
   @media(max-width:680px){
     .hero{flex-direction:column-reverse;gap:26px;align-items:flex-start}
     .hero h1{font-size:27px}
-    .hero-shot{width:190px;align-self:center;transform:rotate(-1.5deg)}
+    .hero-shots{width:286px;height:356px;align-self:center}
+    .phone-front{width:158px;left:0;top:34px}
+    .phone-back{width:148px;right:0}
     header{padding:38px 0 46px}
     .btn-dl{font-size:16px;padding:14px 22px;width:100%;justify-content:center}
   }
@@ -106,8 +122,13 @@
       </a>
       <p class="meta">Sürüm 2.11.1 · 64 MB · Android 5.0 ve üzeri · Ücretsiz</p>
     </div>
-    <div class="hero-shot">
-      <img src="ekranlar/01-kelimeler.jpg" alt="İngilizce 3000 Kelime — kelime listesi ekranı">
+    <div class="hero-shots">
+      <div class="phone phone-back">
+        <img src="ekranlar/07-b2-seviye.jpg" alt="İngilizce 3000 Kelime — kelime listesi">
+      </div>
+      <div class="phone phone-front">
+        <img src="ekranlar/08-kelime-a1.jpg" alt="İngilizce 3000 Kelime — kelime detayı">
+      </div>
     </div>
   </div>
 </header>
@@ -144,13 +165,23 @@
     </div>
   </div>
 
+  <h2 style="margin-top:44px">Seviyeler</h2>
+  <p class="lead">Her seviyenin kendi rengi var; seçtiğiniz seviyeye göre başlık ve rozetler renklenir.</p>
+  <div class="levels">
+    <div class="lv a1"><span class="dot"></span><div><b>A1 · Başlangıç</b><span>905 kelime</span></div></div>
+    <div class="lv a2"><span class="dot"></span><div><b>A2 · Temel</b><span>801 kelime</span></div></div>
+    <div class="lv b1"><span class="dot"></span><div><b>B1 · Orta</b><span>695 kelime</span></div></div>
+    <div class="lv b2"><span class="dot"></span><div><b>B2 · Orta üstü</b><span>599 kelime</span></div></div>
+  </div>
+
   <h2 style="margin-top:44px">Uygulamadan görüntüler</h2>
   <p class="lead">Gerçek ekran görüntüleri — sürüm 2.11.1.</p>
   <div class="shots">
-    <figure><img src="ekranlar/02-kelime-detayi.jpg" alt="Kelime detayı: anlam, okunuş, örnek cümle"><figcaption>Kelime detayı</figcaption></figure>
+    <figure><img src="ekranlar/01-kelimeler.jpg" alt="Kelime listesi"><figcaption>Kelime listesi</figcaption></figure>
     <figure><img src="ekranlar/03-kartlar.jpg" alt="Kelime kartları"><figcaption>Kartlar</figcaption></figure>
     <figure><img src="ekranlar/04-test.jpg" alt="Test modu"><figcaption>Test</figcaption></figure>
     <figure><img src="ekranlar/05-ayarlar.jpg" alt="Ayarlar: hız ve ses"><figcaption>Hız ve ses</figcaption></figure>
+    <figure><img src="ekranlar/09-kelime-b2.jpg" alt="Kelime detayı: anlam, okunuş, örnek cümle"><figcaption>Kelime detayı</figcaption></figure>
     <figure><img src="ekranlar/06-google-hesabi.jpg" alt="Google hesabı ile eşitleme"><figcaption>Google eşitleme</figcaption></figure>
   </div>
   <p class="hint">← Yatay kaydırarak tümünü görebilirsiniz.</p>
@@ -221,5 +252,5 @@
   </div>
 </footer>
 
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5b8e8fecf0bdef8',t:'MTc5NDg1NzQyNQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5b8e8fecf0bdef8',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
