@@ -79,6 +79,18 @@
          background:var(--brand);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
   .note{background:#fff8e6;border:1px solid #f5e0a8;border-radius:12px;padding:14px 18px;font-size:13.5px;
         color:#6b5300;margin:16px 0 0}
+  .pp{border:1px solid #cfd8e8;border-radius:14px;background:#f5f8ff;padding:18px 20px;margin:18px 0 0}
+  .pp-head{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+  .pp-head svg{width:22px;height:22px;flex:0 0 auto;color:var(--brand)}
+  .pp-head strong{font-size:15.5px;color:#1f2440}
+  .pp p{margin:0 0 10px;font-size:13.5px;color:#414963;line-height:1.62}
+  .pp p:last-child{margin-bottom:0}
+  .pp ol{margin:8px 0 0;padding-left:20px;font-size:13.5px;color:#414963;line-height:1.75}
+  .pp ol li{margin-bottom:5px}
+  .pp code{background:#e6ecf9;border-radius:5px;padding:1px 6px;font-size:12.5px;color:#1f2440;
+           font-family:ui-monospace,Menlo,Consolas,monospace}
+  .pp .kv{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin:6px 0 0;font-size:12.5px;color:#5a6480}
+  .pp .kv code{word-break:break-all;font-size:11.5px}
 
   /* ---------- sss ---------- */
   details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:0 0 10px}
@@ -196,14 +208,51 @@
   </div>
   <p class="hint">← Yatay kaydırarak tümünü görebilirsiniz. Görüntüler uygulamanın kendisinden alınmıştır.</p>
 
-  <h2 style="margin-top:44px">Kurulum</h2>
+  <h2 style="margin-top:44px" id="kurulum">Kurulum</h2>
   <p class="lead">Uygulama Google Play dışında, APK dosyası olarak kurulur.</p>
   <ol class="steps">
     <li><strong>Yukarıdaki "APK indir" düğmesine basın.</strong> Dosya (67,7 MB) telefonunuza indirilir.</li>
     <li><strong>Bildirimlerden veya İndirilenler klasöründen dosyaya dokunun.</strong></li>
     <li><strong>"Bilinmeyen kaynaklara izin ver" uyarısı çıkarsa onaylayın.</strong> Bu, Play dışı uygulamalar için Android'in standart güvenlik adımıdır.</li>
+    <li><strong>Play Protect "bilinmeyen uygulama" uyarısı verirse "Yine de yükle" seçin.</strong> Ayrıntısı aşağıda — uygulama güvenlidir, uyarı yalnızca Play Store'da yayınlanmadığı için çıkar.</li>
     <li><strong>Kur'a basın.</strong> Uygulama açılır ve hemen kullanılabilir.</li>
   </ol>
+
+  <div class="pp">
+    <div class="pp-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3.5v5.2c0 4.6-3.1 8.2-7.5 9.3-4.4-1.1-7.5-4.7-7.5-9.3V6.5z"/><path d="M9 12.2l2.1 2.1L15.4 10"/></svg>
+      <strong>Play Protect uyarısı çıkarsa — korkmanıza gerek yok</strong>
+    </div>
+    <p>
+      Bu uygulama <strong>Google Play Store'da yayınlanmıyor</strong>, doğrudan APK olarak dağıtılıyor.
+      Telefonunuzdaki <strong>Play Protect</strong> yalnızca Play Store'dan yüklenen uygulamaları tanır; bu yüzden
+      ilk kurulumda <em>"Bilinmeyen uygulama"</em> veya <em>"Bu uygulama güvenli olmayabilir"</em> uyarısı gösterebilir.
+      Bu uyarı bir virüs tespiti <strong>değildir</strong> — sadece "bu yazılımı Google Play üzerinden doğrulamadım" demektir.
+    </p>
+    <p><strong>Ne yapmalısınız:</strong></p>
+    <ol>
+      <li>Uyarı ekranında <strong>"Yine de yükle"</strong> (bazı telefonlarda <strong>"Yine de kur"</strong> / <strong>"Kur"</strong>) seçeneğine dokunun.</li>
+      <li>Böyle bir düğme yoksa: <strong>"Ayrıntılar"</strong> veya <strong>"Daha fazla bilgi"</strong> yazısına dokunun, ardından <strong>"Yine de yükle"</strong> çıkar.</li>
+      <li>Ekranın altında <strong>"Yükleme engellendi"</strong> yazıyorsa: <strong>Ayarlar → Güvenlik → Play Protect</strong> yolundan
+          <strong>"Uygulamaları tara"</strong> seçeneğini geçici olarak kapatıp kurulumu tamamlayın,
+          kurulum bittikten sonra tekrar açın.</li>
+    </ol>
+    <p style="margin-top:12px">
+      <strong>Neden güvenebilirsiniz:</strong> Uygulamanın kaynak kodu herkese açıktır
+      (<a href="https://github.com/SENTOR-X/ingilizce3000" target="_blank" rel="noopener">github.com/SENTOR-X/ingilizce3000</a>),
+      hiçbir reklam, analiz veya izleme yazılımı içermez ve internet izni yalnızca isteğe bağlı Google eşitleme içindir.
+      İsterseniz indirdiğiniz dosyanın bütünlüğünü kendiniz doğrulayabilirsiniz:
+    </p>
+    <div class="kv">
+      <span>SHA-256:</span>
+      <code>a5230d53e314cdd28075959c6990bd6296082311245a1eee3b419ceb2ced7225</code>
+    </div>
+    <div class="kv">
+      <span>Boyut:</span> <code>67.717.763 bayt</code>
+      <span style="opacity:.6">·</span>
+      <span>Sürüm:</span> <code>2.16.0</code>
+    </div>
+  </div>
   <div class="note">
     <strong>Not:</strong> Ses dosyaları uygulamanın içinde olduğu için ilk açılışta birkaç saniye hazırlık yapılır.
     Uygulama bu hazırlık dışında tamamen çevrimdışı çalışır.
@@ -229,6 +278,21 @@
     <summary>Ücretli mi? Reklam var mı?</summary>
     <p>Tamamen ücretsizdir. Reklam, abonelik veya uygulama içi satın alma yoktur. Hiçbir analiz/izleme yazılımı
       kullanılmaz.</p>
+  </details>
+  <details>
+    <summary>Play Protect uyarısı veriyor, uygulama güvenli mi?</summary>
+    <p>Evet. Uygulama Play Store'da yayınlanmadığı için Play Protect onu tanımıyor ve
+      "bilinmeyen uygulama" olarak işaretliyor. Bu bir virüs uyarısı değil, "bu uygulamayı Google Play
+      üzerinden doğrulamadım" bilgisidir. "Yine de yükle" seçeneğiyle kuruluma devam edebilirsiniz.
+      Kaynak kodu açık, reklam ve izleme yazılımı içermiyor. Ayrıntılı adımlar
+      <a href="#kurulum">Kurulum</a> bölümünde.</p>
+  </details>
+  <details>
+    <summary>Play Protect uyarısını kalıcı olarak nasıl kapatırım?</summary>
+    <p>Play Protect'i tamamen kapatmanızı önermiyoruz — telefonunuzu diğer zararlı uygulamalara karşı da
+      koruyan bir sistemdir. Bunun yerine uyarıyı görmezden gelip "Yine de yükle" demeniz yeterli;
+      uyarı yalnızca ilk kurulumda çıkar, uygulama güncellemelerinde tekrar etmez.
+      Yine de kapatmak isterseniz: <strong>Ayarlar → Güvenlik → Play Protect → Uygulamaları tara</strong>.</p>
   </details>
   <details>
     <summary>Verilerimi nasıl silerim?</summary>
@@ -262,5 +326,5 @@
   </div>
 </footer>
 
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5c66724ca430a75',t:'MTc5NDk5ODkwNw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5c66724ca430a75',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5c66f5c7bc5aa31',t:'MTc5NDk5OTI0NA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5c66f5c7bc5aa31',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
